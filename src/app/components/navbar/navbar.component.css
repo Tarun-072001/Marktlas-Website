@@ -1,0 +1,200 @@
+html {
+  scroll-behavior: smooth;
+}
+@media (max-width: 991px) {
+  .logo-image {
+    display: inline-block;
+    width: 180px;
+    height: 50px;
+    background: url('../../../assets/markatlas.jpeg') no-repeat center center;
+    background-size: contain;
+    margin-right: 10px;
+  }
+}
+/* Logo image via CSS */
+/* .logo-image {
+  display: inline-block;
+  width: 180px;
+  height: 50px;
+  background: url('../../../assets/markatlas.jpeg') no-repeat center center;
+  background-size: contain;
+  margin-right: 10px;
+} */
+
+/* Company Name */
+.sitename {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Header background */
+.header {
+  background: linear-gradient(to right, #ff8800ff, #8E2DE2);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  padding: 15px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* Navigation - Large screens */
+#navmenu {
+  display: flex;
+  gap: 15px;
+}
+
+#navmenu ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navmenu li {
+  position: relative;
+}
+
+#navmenu a {
+  padding: 10px 15px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+#navmenu a:hover,
+#navmenu a.active {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+}
+
+/* Dropdown style */
+#navmenu .dropdown ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #b51aab;
+  padding: 10px 0;
+  list-style: none;
+  z-index: 1000;
+  min-width: 220px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 4px;
+}
+
+#navmenu .dropdown ul.show {
+  display: block;
+}
+
+#navmenu .dropdown ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: white;
+  transition: all 0.2s ease;
+}
+
+#navmenu .dropdown ul li a:hover {
+  background-color: #a4811f;
+  color: white;
+}
+
+/* Social media icons */
+.header-social-links {
+  display: flex;
+  gap: 15px;
+  margin-left: 20px;
+}
+
+.header-social-links a {
+  color: white;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+.header-social-links a:hover {
+  color: #2bf304;
+}
+
+/* Mobile Responsive */
+@media (max-width: 991px) {
+  .mobile-nav-toggle {
+    display: block;
+    font-size: 28px;
+    cursor: pointer;
+    color: white;
+    z-index: 10001;
+    transition: color 0.3s ease;
+  }
+
+  .mobile-nav-toggle:hover {
+    color: #2bf304;
+  }
+
+  #navmenu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: #b51aabf5;
+    flex-direction: column;
+    padding: 80px 1.5rem 2rem;
+    transition: left 0.3s ease;
+    z-index: 10000;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  #navmenu.mobile-nav-active {
+    display: flex;
+    left: 0;
+  }
+
+  #navmenu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  #navmenu a {
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+
+  #navmenu .dropdown ul {
+    position: static;
+    display: none;
+    box-shadow: none;
+    background: rgba(255, 255, 255, 0.1);
+    margin-top: 5px;
+  }
+
+  #navmenu .dropdown ul.show {
+    display: block;
+  }
+
+  .header-social-links {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) {
+  .mobile-nav-toggle {
+    display: none;
+  }
+
+  #navmenu .dropdown:hover ul {
+    display: block;
+  }
+}
+
+/* Ensure content doesn't overlap with fixed navbar */
+body {
+  padding-top: 80px; /* Adjust based on navbar height */
+}

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>MARKATLAS INKJET</title>
+
+</head>
+<body class="index-page">
+<br>
+<br>
+<section class="experience-section">
+  <div class="content-container">
+    <div class="left-box">
+      <h1 class="company-title">MARKATLAS INKJET - Driving Innovation</h1>
+      <p class="company-intro" style="text-align: justify; color: white;">
+        With over <strong style="color: black;">3 years of excellence</strong>, 
+        <strong style="color: black;">MARKATLAS INKJET</strong> is a trusted leader in software development, 
+        delivering transformative digital solutions to businesses worldwide. Our expert team of engineers, UI/UX designers, 
+        and developers crafts innovative applications tailored to your unique needs.
+        <br><br>
+        We specialize in <strong>custom web and mobile app development</strong>, 
+        <strong>e-commerce platforms</strong>, <strong>enterprise software</strong>, 
+        <strong>AI-driven solutions</strong>, and <strong>cloud-based systems</strong>. 
+        By leveraging cutting-edge technologies, we empower our clients to achieve operational excellence, 
+        enhance customer experiences, and stay ahead in a competitive digital landscape.
+        <br><br>
+        Our commitment to quality, innovation, and client success has earned us a reputation for delivering 
+        scalable, secure, and high-performance solutions that drive measurable results.
+      </p>
+      <a href="#solutions" class="experience-button">DISCOVER OUR SOLUTIONS</a>
+    </div>
+    <div class="right-box">
+      <div class="stats">
+        <div class="stat">
+          <h1>100+</h1>
+          <p>HAPPY CLIENTS</p>
+        </div>
+        <div class="stat">
+          <h1>150+</h1>
+          <p>COMPLETED PROJECTS</p>
+        </div>
+        <div class="stat">
+          <h1>60+</h1>
+          <p>INDUSTRIES SERVED</p>
+        </div>
+        <div class="stat">
+          <h1>3+</h1>
+          <p>YEARS OF EXPERIENCE</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="app-section">
+  <h2>Android & iOS Applications</h2>
+  <div class="app-container">
+    <div class="app-card" (click)="openModal('SHOPPING APP', 'This is a detailed description of the Shopping App.')">
+      <img src="https://cdn.pixabay.com/photo/2016/12/20/22/32/holiday-shopping-1921658_1280.jpg" alt="Shopping App">
+      <h3>SHOPPING APP</h3>
+      <button>READ MORE</button>
+    </div>
+    <div class="app-card" (click)="openModal('RESTAURANT APP', 'Details about the Restaurant App features.')">
+      <img src="https://cdn.pixabay.com/photo/2015/09/14/11/43/restaurant-939434_1280.jpg" alt="Restaurant App">
+      <h3>RESTAURANT APP</h3>
+      <button>READ MORE</button>
+    </div>
+  </div>
+  <br>
+  <div class="app-container">
+    <div class="app-card" (click)="openModal('GROCERY APP', 'Explore the Grocery App features and options.')">
+      <img src="https://cdn.pixabay.com/photo/2018/05/17/14/16/fruit-3408683_1280.jpg" alt="Grocery App">
+      <h3>GROCERY APP</h3>
+      <button>READ MORE</button>
+    </div>
+    <div class="app-card" (click)="openModal('E-COMM APP', 'Information about the E-Commerce Application.')">
+      <img src="https://www.webblitz.co.in/uploads/653/ecom1-mfbi46-min-nenfp.jpg" alt="E-Comm App">
+      <h3>E-COMM APP</h3>
+      <button>READ MORE</button>
+    </div>
+  </div>
+
+  <!-- Modal Popup -->
+  <div class="modal-overlay" *ngIf="showModal">
+    <div class="modal-content">
+      <span class="close-btn" (click)="closeModal()">&times;</span>
+      <h2>{{ modalTitle }}</h2>
+      <p>{{ modalContent }}</p>
+    </div>
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container">
+    <h4 style="font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: black;
+    font-weight: bold;">Exclusive Features of MARKATLAS INKJET</h4>
+    <hr>
+    <div class="features-grid">
+      <!-- Feature 1 -->
+      <article class="feature">
+        <div class="feature-icon">📊</div>
+        <h3 style="color: black;">Advanced Analytical Integration</h3>
+        <hr>
+        <p>At MARKATLAS INKJET, we simplify analytics for your business. Forget third-party tools—view and analyze web data directly from our CMS panel with unmatched ease and precision.</p>
+      </article>
+
+      <!-- Feature 2 -->
+      <article class="feature">
+        <div class="feature-icon">🔗</div>
+        <h3 style="color: black;">Lead Management & Tracking</h3>
+        <hr>
+        <p>MARKATLAS INKJET empowers you to track potential leads from various sources. With our integrated CRM system, converting leads into loyal customers has never been easier.</p>
+      </article>
+
+      <!-- Feature 3 -->
+      <article class="feature">
+        <div class="feature-icon">🎨</div>
+        <h3 style="color: black;">Flexible Theme Customization</h3>
+        <hr>
+        <p>Redesign your website at any time with MARKATLAS INKJET. Customize themes, color schemes, and layouts effortlessly, ensuring your site stays fresh, modern, and aligned with your brand.</p>
+      </article>
+
+      <!-- Feature 4 -->
+      <article class="feature">
+        <div class="feature-icon">💳</div>
+        <h3 style="color: black;">Integrated Payment Gateways</h3>
+        <hr>
+        <p>Secure and reliable payment processing is at the heart of MARKATLAS INKJET’s CMS. We offer integrations with trusted payment gateways like Razorpay and Instamojo, ensuring smooth and safe transactions for your customers.</p>
+      </article>
+
+      <!-- Feature 5 -->
+      <article class="feature">
+        <div class="feature-icon">📦</div>
+        <h3 style="color: black;">Efficient Stock & Product Management</h3>
+        <hr>
+        <p>Managing inventory has never been easier. With MARKATLAS INKJET’s CMS, you can add, update, and manage your products with powerful tools designed for smooth and effortless product management.</p>
+      </article>
+
+      <!-- Feature 6 -->
+      <article class="feature">
+        <div class="feature-icon">📋</div>
+        <h3 style="color: black;">Comprehensive Order Management</h3>
+        <hr>
+        <p>Track and manage customer orders in real-time with our comprehensive order management system. MARKATLAS INKJET’s CMS allows for precise updates and streamlined client information management.</p>
+      </article>
+
+      <!-- Feature 7 -->
+      <article class="feature">
+        <div class="feature-icon">🖼️</div>
+        <hr>
+        <h3 style="color: black;">Advanced Image Editing Tools</h3>
+        <p>Edit images directly within the website builder. With MARKATLAS INKJET, you can crop, adjust brightness, contrast, saturation, and more—giving you full control over your visual content without external tools.</p>
+      </article>
+
+      <!-- Feature 8 -->
+      <article class="feature">
+        <div class="feature-icon">🎥</div>
+        <h3 style="color: black;">Embed YouTube Videos Seamlessly</h3>
+       <hr>
+        <p>Enhance your website with YouTube video integration. Share important business-related videos directly with your audience to improve user engagement and showcase your brand’s expertise.</p>
+      </article>
+
+      <!-- Feature 9 -->
+      <article class="feature">
+        <div class="feature-icon">📄</div>
+        <h3 style="color: black;">Fully Integrated Billing System</h3>
+        <hr>
+        <p>Managing finances is simple with MARKATLAS INKJET’s CMS. Our platform includes a free billing panel that lets you create both online and offline invoices, making financial documentation more secure and easier to manage.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="custom-contact-section" style="    background: bisque;">
+  <div class="custom-container">
+    <div class="custom-image-box">
+      <img src="https://www.webblitz.co.in/uploads/653/contact-us-figure-2m7r4f.png" alt="Contact Illustration">
+    </div>
+
+    <div class="custom-form-box">
+      <h2>Contact Us</h2>
+      <input type="text" [(ngModel)]="name" placeholder="Your Name" required>
+      <input type="tel" [(ngModel)]="mobile" placeholder="Mobile" required>
+      <input type="email" [(ngModel)]="email" placeholder="E-Mail" required>
+      <textarea [(ngModel)]="message" placeholder="Message Here" required></textarea>
+
+      <div class="custom-captcha-group">
+        <input type="text" [(ngModel)]="captchaInput" placeholder="Enter the code">
+        <div class="custom-captcha-code">{{ generatedCaptcha }}</div>
+      </div>
+
+      <button (click)="submitForm()">Send</button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="company-name" style="color: #0d6efd;">MARKATLAS INKJET</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <!-- Contact Info Column -->
+        <div class="contact-column">
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">Office</p>
+              <p class="contact-value">+91 ----------</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-mobile-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">Phone</p>
+              <!-- <p class="contact-value">+91 88855 54298</p> -->
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div>
+              <p class="contact-label">For Enquiry</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-headset contact-icon"></i>
+            <div>
+              <p class="contact-label">Support</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-ticket-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">For Ticket</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Branches Column -->
+        <div class="branches-column">
+          <h3 class="branches-title" style="color: #0d6efd;">India Branch</h3>
+          
+          <div class="branch-item">
+            <h4 class="branch-name">1st Floor, DSL ABACUS IT PARK, </h4>
+            <p class="branch-address">
+              Survey Colony, Industrial Development Area, Uppal, Hyderabad, Telangana 500039
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="achievements">
+        <p class="achievement-item" style="color: #0d6efd;">1st Floor, DSL ABACUS IT PARK, Survey Colony, Industrial Development Area, Uppal, Hyderabad, Telangana 500039</p>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer class="footer-links">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="footer-logo-image"></div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <div class="links-column">
+                <h3>Links:</h3>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">about</a></li>
+                    <li><a href="Feature">Feature</a></li>
+                    <li><a href="Contact">Contact</a></li>
+                    <li><a href="Ecommerce">Ecommerce</a></li>
+                    <li><a href="Online-Class">online class</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="links-column">
+              <h3 >Development</h3>
+                <ul>
+                    <li><a href="DevelopmentWeb">Mobile Apps and DevelopmentWeb</a></li>
+                    <li><a href="development">Development</a></li>
+                    <li><a href="Application">Ecommerce Website With Application</a></li>
+                    <li><a href="School">Ecommerce Solutions School Web & Application</a></li>
+                    <li><a href="Marketing">Digital Marketing</a></li>
+                    <li><a href="Ecommerce">Ecommerce For Multivendors</a></li>
+                </ul>
+            </div>
+
+           
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

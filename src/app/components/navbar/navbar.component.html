@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Neeltron Tech - Navbar</title>
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body class="index-page">
+  <header id="header" class="header d-flex align-items-center sticky-top">
+    <div class="container-fluid position-relative d-flex align-items-center justify-content-between">
+      <!-- Logo and Company Name -->
+      <a href="#" class="logo d-flex align-items-center">
+        <span class="logo-image"></span>
+        <!-- <h1 class="sitename">NEELTRON TECH PVT LTD</h1> -->
+      </a>
+
+      <!-- Navigation Menu -->
+      <nav id="navmenu" [class.mobile-nav-active]="mobileNavActive">
+        <ul>
+          <li><a href="home" [class.active]="isActive('home')" (click)="setActive('home')">Home</a></li>
+          <li><a href="about" [class.active]="isActive('about')" (click)="setActive('about')">About Us</a></li>
+          <li class="dropdown" [class.active]="dropdownActive === 'products'">
+            <a href="#" (click)="toggleDropdown('products'); $event.preventDefault()">
+              <span>Development</span> <i class="bi bi-chevron-down"></i>
+            </a>
+            <ul [class.show]="dropdownActive === 'products'">
+              <li><a href="DevelopmentWeb" (click)="setActive('DevelopmentWeb')">Mobile Apps & Web Development</a></li>
+              <li><a href="development" (click)="setActive('development')">Development</a></li>
+              <li><a href="Application" (click)="setActive('Application')">Ecommerce Website With App</a></li>
+              <li><a href="School" (click)="setActive('School')">School Web & App Solutions</a></li>
+              <li><a href="Marketing" (click)="setActive('Marketing')">Digital Marketing</a></li>
+              <li><a href="Ecommerce" (click)="setActive('Ecommerce')">Ecommerce for Multivendors</a></li>
+            </ul>
+          </li>
+          <li><a href="Feature" [class.active]="isActive('Feature')" (click)="setActive('Feature')">Features</a></li>
+          <li><a href="Online-Class" [class.active]="isActive('Online-Class')" (click)="setActive('Online-Class')">Our Team</a></li>
+          <li><a href="Contact" [class.active]="isActive('Contact')" (click)="setActive('Contact')">Contact</a></li>
+          <li><a href="Website" [class.active]="isActive('Website')" (click)="setActive('Website')">Ecommerce Website & App</a></li>
+          <!-- <li><a href="Registationform" [class.active]="isActive('Website')" (click)="setActive('Website')">Registation-form</a></li> -->
+           <li><a href="registrationform" [class.active]="isActive('registrationform')" (click)="setActive('registrationform')">Registration Form</a></li>
+          <li><a href="carrers" [class.active]="isActive('login')" (click)="setActive('login')">Carrers</a></li>
+
+
+        </ul>
+      </nav>
+
+      <!-- Mobile Nav Toggle -->
+      <div class="mobile-nav-toggle" (click)="toggleMobileMenu()">
+        <i class="bi" [class.bi-list]="!mobileNavActive" [class.bi-x]="mobileNavActive"></i>
+      </div>
+
+      <!-- Social Media -->
+      <div class="header-social-links">
+        <a href="https://twitter.com"><i class="bi bi-twitter-x"></i></a>
+        <a href="https://facebook.com"><i class="bi bi-facebook"></i></a>
+        <a href="https://instagram.com"><i class="bi bi-instagram"></i></a>
+        <a href="https://linkedin.com"><i class="bi bi-linkedin"></i></a>
+      </div>
+    </div>
+  </header>
+</body>
+</html>

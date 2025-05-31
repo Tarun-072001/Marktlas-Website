@@ -1,0 +1,419 @@
+/* 1th section style code. */
+
+/* Web Development Team Section Styles */
+.team-section {
+  background-color: #f9f9f9;
+  padding: 60px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  color: #114985;
+  margin-bottom: 40px;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.team-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+
+.team-member {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.team-member img {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  margin-bottom: 15px;
+}
+
+.team-member h3 {
+  color: #00A6A6;
+  margin-bottom: 10px;
+}
+
+.team-member p {
+  color: #333333;
+  margin-bottom: 10px;
+}
+
+.team-member ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left;
+  color: #555555;
+}
+
+/* 2th section style code. */
+
+/* Internship, Placement & Training Section Styles */
+.internship-section {
+  background-color: #ffffff;
+  padding: 60px 0;
+  font-family: 'Poppins', sans-serif;
+}
+
+.internship-content,
+.placement-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-bottom: 60px;
+}
+
+.internship-content img,
+.placement-content img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.internship-details,
+.placement-details {
+  flex: 1;
+  padding: 20px;
+}
+
+.internship-details p,
+.placement-details p {
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.internship-details ul,
+.placement-details ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555555;
+}
+
+@media (max-width: 768px) {
+  .internship-content,
+  .placement-content {
+    flex-direction: column;
+  }
+
+  .internship-details,
+  .placement-details {
+    padding: 0;
+  }
+}
+
+/*3th section style code. */
+/* 4th section style code. */
+/* 5th section style code. */
+
+/* 9th section style code. */
+
+
+
+.contact-section {
+  background: linear-gradient(to bottom, #2d3838 0%, #171818 100%);
+  padding: 60px 0;
+  font-family: 'Poppins', sans-serif;
+  color: white; /* Ensure text is readable on the gradient background */
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.company-name {
+  font-size: 2rem;
+  color: rgb(0, 174, 242); /* Orange to match the original design */
+  text-align: center;
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 40px;
+}
+
+.contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-icon {
+  font-size: 1.2rem;
+  color: rgb(0, 174, 242); /* Orange for icons to match the design */
+  width: 30px;
+  text-align: center;
+}
+
+.contact-label {
+  font-weight: 600;
+  color: white;
+  margin: 0;
+  font-size: 0.9rem;
+}
+
+.contact-value {
+  color: white;
+  margin: 5px 0 0 0;
+  font-size: 1rem;
+}
+
+.contact-value.highlight {
+  color: rgb(0, 174, 242); /* Orange for email addresses */
+}
+
+.branches-column {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.branches-title {
+  font-size: 1.3rem;
+  color: rgb(0, 174, 242); /* Orange for branch titles */
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.branch-item {
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent white for contrast */
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+}
+
+.branch-name {
+  font-size: 1.1rem;
+  color: white;
+  margin: 0 0 8px 0;
+  font-weight: 600;
+}
+
+.branch-address, .branch-phone {
+  color: white;
+  margin: 5px 0;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.achievements {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.3); /* Lighter border for contrast */
+}
+
+.achievement-item {
+  color: rgb(0, 174, 242); /* Orange for achievements */
+  font-weight: 600;
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+  .contact-grid {
+      grid-template-columns: 1fr;
+  }
+
+  .company-name {
+      font-size: 1.8rem;
+  }
+
+  .achievements {
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .company-name {
+      font-size: 1.5rem;
+  }
+
+  .contact-section {
+      padding: 40px 0;
+  }
+}
+/* 10th section style code. */
+
+.footer-links {
+    background: linear-gradient(to bottom, #F5F7FA 0%, #E8ECEF 100%);
+    padding: 40px 0;
+    border-top: 3px solid #00A6A6;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .footer-logo {
+    flex: 1;
+    min-width: 200px;
+    text-align: center;
+  }
+  
+  .footer-logo-image {
+    width: 180px;
+    height: 60px; /* Adjust height based on your logo's aspect ratio */
+    background-image: url('../../../assets/markatlas.jpeg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0 auto 15px;
+    transition: transform 0.3s ease;
+  }
+  
+  .footer-logo-image:hover {
+    transform: scale(1.05);
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+  }
+  
+  .social-icons a {
+    color: #00A6A6;
+    font-size: 22px;
+    text-decoration: none;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    color: #FFA500;
+    transform: translateY(-3px);
+  }
+  
+  .links-section {
+    flex: 3;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  .links-column {
+    flex: 1;
+    min-width: 150px;
+  }
+  
+  .links-column h3 {
+    font-size: 18px;
+    color: #114985;
+    font-weight: 600;
+    margin-bottom: 15px;
+    position: relative;
+    padding-bottom: 8px;
+  }
+  
+  .links-column h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: #FFA500;
+  }
+  
+  .links-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .links-column ul li {
+    margin-bottom: 12px;
+  }
+  
+  .links-column ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: color 0.3s ease;
+  }
+  
+  .links-column ul li a:hover {
+    color: #00A6A6;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+  
+    .footer-logo {
+        margin-bottom: 30px;
+    }
+  
+    .links-section {
+        justify-content: center;
+        text-align: center;
+    }
+  
+    .links-column h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .footer-links {
+        padding: 30px 0;
+    }
+  
+    .footer-logo-image {
+        width: 150px;
+        height: 50px;
+    }
+  
+    .social-icons a {
+        font-size: 20px;
+    }
+  
+    .links-column h3 {
+        font-size: 16px;
+    }
+  
+    .links-column ul li a {
+        font-size: 14px;
+    }
+  }
+

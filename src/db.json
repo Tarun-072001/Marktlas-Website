@@ -1,0 +1,160 @@
+{
+  "students": [
+    {
+      "id": "1",
+      "fullName": "Lakavath Tharun",
+      "email": "t256@gmail.com",
+      "mobile": "7660938457",
+      "address": "Tanvi Residency, Malkajgiri, Secundrabad, Hydebarad.",
+      "highestQualification": "High School",
+      "course": "Web Development",
+      "courseFee": 10000,
+      "joinType": "Demo",
+      "mode": "Online",
+      "paymentMode": "",
+      "paymentAmount": 0,
+      "registrationDate": "2025-05-23T09:35:22.387Z"
+    },
+    {
+      "id": "2",
+      "fullName": "Lakavath Kethan Naik",
+      "email": "kethan07062024@gmail.com",
+      "mobile": "7894125630",
+      "address": "KRK Thanda, Thirumalagiri, Suryapet, Telangana",
+      "highestQualification": "PhD",
+      "course": "Web Development",
+      "courseFee": 10000,
+      "joinType": "Join",
+      "mode": "Offline",
+      "paymentMode": "Online",
+      "paymentAmount": 10000,
+      "registrationDate": "2025-05-23T09:41:24.827Z"
+    },
+    {
+      "id": "3",
+      "fullName": "Tharun",
+      "email": "Tharun@gmail.com",
+      "mobile": "7845693120",
+      "address": "bdsvnkjjvniu",
+      "highestQualification": "Diploma",
+      "course": "Angular Full Stack",
+      "courseFee": 15000,
+      "joinType": "Join",
+      "mode": "Online",
+      "paymentMode": "Offline",
+      "paymentAmount": 15000,
+      "registrationDate": "2025-05-23T10:28:59.894Z"
+    },
+    {
+      "id": "1",
+      "fullName": "Tejas",
+      "email": "tejas@gmail.com",
+      "mobile": "7531692480",
+      "address": "fdnjienroi",
+      "highestQualification": "Bachelor's Degree",
+      "course": "Angular Full Stack",
+      "courseFee": 15000,
+      "joinType": "Join",
+      "mode": "Online",
+      "paymentMode": "Offline",
+      "paymentAmount": 15000,
+      "registrationDate": "2025-05-26T05:53:12.149Z"
+    },
+    {
+      "id": 5,
+      "fullName": "Swathik",
+      "email": "swathik@gmail.com",
+      "mobile": "7894561230",
+      "address": "Malkajgiri",
+      "highestQualification": "High School",
+      "course": "Web Development",
+      "courseFee": 10000,
+      "joinType": "Demo",
+      "mode": "Online",
+      "paymentMode": "",
+      "paymentAmount": 0,
+      "registrationDate": "2025-05-28T10:19:20.064Z"
+    },
+    {
+      "id": 6,
+      "fullName": "Swathik",
+      "email": "kethan@gmail.com",
+      "mobile": "7894561230",
+      "address": "Malkajgiri",
+      "highestQualification": "Diploma",
+      "course": "Angular Full Stack",
+      "courseFee": 15000,
+      "joinType": "Join",
+      "mode": "Offline",
+      "paymentMode": "Offline",
+      "paymentAmount": 15000,
+      "registrationDate": "2025-05-28T10:20:31.475Z"
+    }
+  ],
+  "users": [
+    {
+      "id": "f1f7",
+      "fullName": "Rakesh",
+      "fatherName": "skjvnksvn",
+      "motherName": "ndskvniwejn",
+      "age": 22,
+      "gender": "Male",
+      "mobileNumber": "7894561230",
+      "email": "rakesh@gmail.com",
+      "address": "Malkajgiri",
+      "country": "India",
+      "state": "Telangana",
+      "pinCode": "500047",
+      "mandal": " hbhudf",
+      "password": "1234",
+      "confirmPassword": "1234"
+    }
+  ],
+  "applications": [
+    {
+      "id": "39e0"
+    },
+    {
+      "id": "17e6",
+      "personalInfo": {
+        "fullName": "Lakavath Tharun",
+        "email": "tharunlakavath256@gmail.com",
+        "phone": "07660938457",
+        "address": "Malkajgiri",
+        "linkedin": "no",
+        "github": "No"
+      },
+      "positionDetails": {
+        "jobTitle": "Full Stack Developer",
+        "source": "Company Website",
+        "workAuth": "Yes",
+        "visa": "Yes"
+      },
+      "education": {
+        "degree": "Bachelor's",
+        "field": "pass",
+        "institution": "abcd",
+        "gradYear": 2022,
+        "certifications": "no"
+      },
+      "workExperience": [
+        {
+          "company": "Axiontech Software Solution Pvt Ltd.",
+          "jobTitle": "full",
+          "duration": "bjhbhq",
+          "technologies": "jhbjhg",
+          "responsibilities": "hvjhgu"
+        }
+      ],
+      "additionalInfo": {
+        "resumeFileName": "Shravya_Resume -1pdf.pdf",
+        "relocate": "Yes",
+        "salary": 2
+      },
+      "declaration": {
+        "certify": true,
+        "consent": true
+      }
+    }
+  ]
+}

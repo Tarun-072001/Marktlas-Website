@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Poppins&display=swap" rel="stylesheet">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <title>Neeltron Tech</title>
+
+</head>
+<body class="index-page">
+<br>
+<!-- src/app/components/job-apply/job-apply.component.html -->
+<section class="form-container">
+  <h1 class="form-title">MARKATLAS INKJET Job Application Form</h1>
+
+  <div *ngIf="submitSuccess" class="success-message">
+    Thank you for your application! We'll review your information and get back to you soon.
+  </div>
+
+  <form *ngIf="!submitSuccess" (ngSubmit)="submitForm()" #form="ngForm">
+    <!-- Personal Information -->
+    <section class="form-section">
+      <h2 class="section-title">Personal Information</h2>
+      <div class="form-grid">
+        <input class="input" type="text" name="fullName" placeholder="Full Name *" 
+               [(ngModel)]="formData.personalInfo.fullName" required>
+        <input class="input" type="email" name="email" placeholder="Email Address *" 
+               [(ngModel)]="formData.personalInfo.email" required>
+        <input class="input" type="tel" name="phone" placeholder="Phone Number *" 
+               [(ngModel)]="formData.personalInfo.phone" required>
+        <textarea class="input" name="address" placeholder="Address" 
+                  [(ngModel)]="formData.personalInfo.address"></textarea>
+        <input class="input" type="url" name="linkedin" placeholder="LinkedIn Profile" 
+               [(ngModel)]="formData.personalInfo.linkedin">
+        <input class="input" type="url" name="github" placeholder="GitHub/Portfolio" 
+               [(ngModel)]="formData.personalInfo.github">
+      </div>
+    </section>
+
+    <!-- Position Details -->
+    <section class="form-section">
+      <h2 class="section-title">Position Details</h2>
+      <div class="form-grid">
+        <select class="input" name="jobTitle" [(ngModel)]="formData.positionDetails.jobTitle" required>
+          <option value="">Select a position *</option>
+          <option value="Software Developer - Backend">Backend Developer</option>
+          <option value="Software Developer - Frontend">Frontend Developer</option>
+          <option value="Full Stack Developer">Full Stack Developer</option>
+          <option value="DevOps Engineer">DevOps Engineer</option>
+        </select>
+        
+        <select class="input" name="source" [(ngModel)]="formData.positionDetails.source">
+          <option value="">How did you hear about us?</option>
+          <option value="Company Website">Company Website</option>
+          <option value="LinkedIn">LinkedIn</option>
+          <option value="Indeed">Indeed</option>
+          <option value="Referral">Referral</option>
+        </select>
+
+        <div class="input radio-group">
+          <label>Authorized to Work in the US? *</label>
+          <label><input type="radio" name="workAuth" [(ngModel)]="formData.positionDetails.workAuth" value="Yes" required> Yes</label>
+          <label><input type="radio" name="workAuth" [(ngModel)]="formData.positionDetails.workAuth" value="No"> No</label>
+        </div>
+
+        <div class="input radio-group">
+          <label>Require Visa Sponsorship? *</label>
+          <label><input type="radio" name="visa" [(ngModel)]="formData.positionDetails.visa" value="Yes" required> Yes</label>
+          <label><input type="radio" name="visa" [(ngModel)]="formData.positionDetails.visa" value="No"> No</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section class="form-section">
+      <h2 class="section-title">Education</h2>
+      <div class="form-grid">
+        <select class="input" name="degree" [(ngModel)]="formData.education.degree" required>
+          <option value="">Select a degree *</option>
+          <option value="Bachelor's">Bachelor's</option>
+          <option value="Master's">Master's</option>
+          <option value="PhD">PhD</option>
+          <option value="Other">Other</option>
+        </select>
+        
+        <input class="input" name="field" type="text" placeholder="Field of Study *" 
+               [(ngModel)]="formData.education.field" required>
+               
+        <input class="input" name="institution" type="text" placeholder="Institution Name *" 
+               [(ngModel)]="formData.education.institution" required>
+               
+        <input class="input" name="gradYear" type="number" min="1900" max="2025" 
+               placeholder="Graduation Year *" [(ngModel)]="formData.education.gradYear" required>
+               
+        <textarea class="input full-width" name="certifications" placeholder="Additional Certifications" 
+                  [(ngModel)]="formData.education.certifications"></textarea>
+      </div>
+    </section>
+
+    <!-- Work Experience -->
+    <section class="form-section">
+      <h2 class="section-title">Work Experience</h2>
+      <div *ngFor="let work of formData.workExperience; let i = index" class="form-grid">
+        <input class="input" [(ngModel)]="work.company" name="company{{i}}" placeholder="Company Name">
+        <input class="input" [(ngModel)]="work.jobTitle" name="jobTitle{{i}}" placeholder="Job Title">
+        <input class="input" [(ngModel)]="work.duration" name="duration{{i}}" placeholder="Duration">
+        <input class="input" [(ngModel)]="work.technologies" name="technologies{{i}}" placeholder="Technologies Used">
+        <textarea class="input full-width" [(ngModel)]="work.responsibilities" 
+                  name="responsibilities{{i}}" placeholder="Key Responsibilities"></textarea>
+      </div>
+      <button type="button" (click)="addWorkExperience()" class="btn-secondary" style="background-color: blue;color: white;">+ Add Work Experience</button>
+    </section>
+
+    <!-- Resume Upload -->
+    <section class="form-section">
+      <h2 class="section-title">Resume</h2>
+      <div class="form-grid">
+        <div class="file-upload">
+          <label>Upload Resume (PDF only) *</label>
+          <input type="file" accept=".pdf" (change)="onFileChange($event)">
+          <div *ngIf="formData.additionalInfo.resumeFileName" class="file-name">
+            Selected: {{ formData.additionalInfo.resumeFileName }}
+          </div>
+        </div>
+
+        <div class="input radio-group">
+          <label>Willing to Relocate? *</label>
+          <label><input type="radio" name="relocate" [(ngModel)]="formData.additionalInfo.relocate" value="Yes" required> Yes</label>
+          <label><input type="radio" name="relocate" [(ngModel)]="formData.additionalInfo.relocate" value="No"> No</label>
+        </div>
+
+        <input class="input" type="number" name="salary" placeholder="Expected Salary (optional)" 
+               [(ngModel)]="formData.additionalInfo.salary">
+      </div>
+    </section>
+
+    <!-- Declaration -->
+    <section class="form-section">
+      <h2 class="section-title">Declaration</h2>
+      <div class="form-grid">
+        <div class="checkbox-group">
+          <input type="checkbox" id="certify" name="certify" [(ngModel)]="formData.declaration.certify" required>
+          <label for="certify">I certify that the information provided is accurate and complete *</label>
+        </div>
+        
+        <div class="checkbox-group">
+          <input type="checkbox" id="consent" name="consent" [(ngModel)]="formData.declaration.consent" required>
+          <label for="consent">I consent to the processing of my personal data for recruitment purposes *</label>
+        </div>
+      </div>
+    </section>
+
+    <!-- Submit Button -->
+    <div class="text-center">
+      <button type="submit" class="btn-primary" [disabled]="isSubmitting">
+        {{ isSubmitting ? 'Submitting...' : 'Submit Application' }}
+      </button>
+    </div>
+  </form>
+</section>
+
+
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <div class="container">
+      <div class="contact-header">
+        <h2 class="company-name" style="color: #0d6efd;">MARKATLAS INKJET</h2>
+      </div>
+      
+      <div class="contact-grid">
+        <!-- Contact Info Column -->
+        <div class="contact-column">
+          <div class="contact-item">
+            <i class="fas fa-phone-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">Office</p>
+              <p class="contact-value">+91 ----------</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-mobile-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">Phone</p>
+              <!-- <p class="contact-value">+91 88855 54298</p> -->
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-envelope contact-icon"></i>
+            <div>
+              <p class="contact-label">For Enquiry</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-headset contact-icon"></i>
+            <div>
+              <p class="contact-label">Support</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+          
+          <div class="contact-item">
+            <i class="fas fa-ticket-alt contact-icon"></i>
+            <div>
+              <p class="contact-label">For Ticket</p>
+              <p class="contact-value">contact&#64;markatlas.com</p>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Branches Column -->
+        <div class="branches-column">
+          <h3 class="branches-title" style="color: #0d6efd;">India Branch</h3>
+          
+          <div class="branch-item">
+            <h4 class="branch-name">1st Floor, DSL ABACUS IT PARK, </h4>
+            <p class="branch-address">
+              Survey Colony, Industrial Development Area, Uppal, Hyderabad, Telangana 500039
+            </p>
+          </div>
+          
+        </div>
+      </div>
+      
+      <div class="achievements">
+        <p class="achievement-item" style="color: #0d6efd;">1st Floor, DSL ABACUS IT PARK, Survey Colony, Industrial Development Area, Uppal, Hyderabad, Telangana 500039</p>
+       
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+<footer class="footer-links">
+    <div class="footer-container">
+        <div class="footer-logo">
+            <div class="footer-logo-image"></div>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+
+        <div class="links-section">
+            <div class="links-column">
+                <h3>Links:</h3>
+                <ul>
+                    <li><a href="home">Home</a></li>
+                    <li><a href="about">about</a></li>
+                    <li><a href="Feature">Feature</a></li>
+                    <li><a href="Contact">Contact</a></li>
+                    <li><a href="Ecommerce">Ecommerce</a></li>
+                    <li><a href="Online-Class">online class</a></li>
+                    
+                </ul>
+            </div>
+
+            <div class="links-column">
+              <h3 >Development</h3>
+                <ul>
+                    <li><a href="DevelopmentWeb">Mobile Apps and DevelopmentWeb</a></li>
+                    <li><a href="development">Development</a></li>
+                    <li><a href="Application">Ecommerce Website With Application</a></li>
+                    <li><a href="School">Ecommerce Solutions School Web & Application</a></li>
+                    <li><a href="Marketing">Digital Marketing</a></li>
+                    <li><a href="Ecommerce">Ecommerce For Multivendors</a></li>
+                </ul>
+            </div>
+
+           
+        </div>
+    </div>
+</footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
