@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "neeltron": {
+    "markatlas": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/neeltron",
+            "outputPath": "dist/markatlas",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -60,10 +60,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "neeltron:build:production"
+              "buildTarget": "markatlas:build:production"
             },
             "development": {
-              "buildTarget": "neeltron:build:development"
+              "buildTarget": "markatlas:build:development"
             }
           },
           "defaultConfiguration": "development"
